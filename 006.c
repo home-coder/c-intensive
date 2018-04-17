@@ -1,13 +1,10 @@
 /*************************************************************************
- > Filename   : 005.c
+ > Filename   : 006.c
  > Author     : oneface - one_face@sina.com
  > Company    : 江山如画
- > Time       : 2018-02-26 19:00:59
+ > Time       : 2018-02-27 09:57:00
  ************************************************************************/
 
 #include <stdio.h>
 
-int main()
-{
-	volatile return 0;
-}
+/* size = pcm_frames_to_bytes(pcm, pcm_get_buffer_size(pcm));  */

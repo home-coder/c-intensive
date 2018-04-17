@@ -1,13 +1,10 @@
 /*************************************************************************
- > Filename   : 005.c
+ > Filename   : 008.c
  > Author     : oneface - one_face@sina.com
  > Company    : 江山如画
- > Time       : 2018-02-26 19:00:59
+ > Time       : 2018-02-27 12:38:42
  ************************************************************************/
 
 #include <stdio.h>
 
-int main()
-{
-	volatile return 0;
-}
+/* http://blog.csdn.net/u013286409/article/details/47414273  */

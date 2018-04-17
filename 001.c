@@ -24,5 +24,8 @@ int main()
 	int q = 0x87654321;
 	printf("q = 0x%x\n", q);
 
+	unsigned char m = 0x4;
+	printf("m = 0x%x\n", m);
+
 	return 0;
 }
