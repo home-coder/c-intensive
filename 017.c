@@ -14,7 +14,7 @@
 
 int main()
 {
-	int cmd = 1;
+	int cmd = 2;
 
 	switch (cmd) {
 		case 1:

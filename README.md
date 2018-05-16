@@ -18,3 +18,7 @@
 016.c	:bool unsigned long
 017.c	:goto
 018.c	:string like "\""
+019.c	:sscanf
+020.c	:char ** malloc
+021.c	:size
+022.c	:fuck malloc

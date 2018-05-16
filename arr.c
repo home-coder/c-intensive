@@ -1,8 +1,8 @@
 /***************************************************************************
- > Filename   : 018.c
+ > Filename   : arr.c
  > Author     : oneface - one_face@sina.com
  > Company    : 一尊还酹江月
- > Time       : 2018-04-24 14:16:02
+ > Time       : 2018-05-14 09:17:54
  > Description: 
 
  - This program is free software; you can redistribute it and/or modify it
@@ -11,18 +11,39 @@
  - option) any later version.
  **************************************************************************/
 #include <stdio.h>
+#include <stdlib.h>
+
+#if 0
+int *return_arr()
+{
+	int arr[] = {1, 2, 3};
+	return arr;
+}
+#endif
+
+int *return_arr()
+{
+	int *arr = (int *)malloc(3 * sizeof(int));
+	int iarr[] = {1, 2, 3};
+	int i;
+
+	for (i = 0; i < sizeof(iarr) / sizeof(iarr[0]); i++) {
+		*(arr  + i) = iarr[i];
+	}
+
+	return arr;
+}
 
 int main()
 {
-	char *s = "\"";
-	// FIXME ERROR char *s = """;
+	int *ap = return_arr();
 
-	printf("%s\n", s);
+	int i;
+	for (i = 0; i < 3; i++) {
+		printf("%d\n", *(ap + i));
+	}
 
-
-	char text1[] =
-		        "{\n\"name\": \"Jack (\\\"Bee\\\") Nimble\", \n\"format\": {\"type\":       \"rect\", \n\"width\":      1920, \n\"height\":     1080, \n\"interlace\":  false,\"frame rate\": 24\n}\n}";
-	printf("%s\n", text1);
+	free(ap);
 
 	return 0;
 }

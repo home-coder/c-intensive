@@ -1,8 +1,8 @@
 /***************************************************************************
- > Filename   : 018.c
+ > Filename   : 019.c
  > Author     : oneface - one_face@sina.com
  > Company    : 一尊还酹江月
- > Time       : 2018-04-24 14:16:02
+ > Time       : 2018-04-24 15:31:26
  > Description: 
 
  - This program is free software; you can redistribute it and/or modify it
@@ -14,15 +14,11 @@
 
 int main()
 {
-	char *s = "\"";
-	// FIXME ERROR char *s = """;
+	char *ptr = "h1234 world";
+	unsigned int uc;
+	sscanf(ptr + 1, "%4x", &uc);
 
-	printf("%s\n", s);
-
-
-	char text1[] =
-		        "{\n\"name\": \"Jack (\\\"Bee\\\") Nimble\", \n\"format\": {\"type\":       \"rect\", \n\"width\":      1920, \n\"height\":     1080, \n\"interlace\":  false,\"frame rate\": 24\n}\n}";
-	printf("%s\n", text1);
+	printf("%d\n", uc);
 
 	return 0;
 }

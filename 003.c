@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#if 0
 int main()
 {
 	char *p = NULL;
@@ -17,6 +18,7 @@ int main()
 
 	return 0;
 }
+#endif
 
 #if 0
 #include <stdio.h>
@@ -86,6 +88,32 @@ int main()
 	printf("%s %d\n", stu->name, stu->age);
 	stu_release(stu);
 	stu = NULL;
+	return 0;
+}
+#endif
+
+#if 1
+
+void malloc_ar(int **ar, int s)
+{
+	int i;
+	*ar = (int *)malloc(s * sizeof(int));
+	for (i = 0; i < s; i++) {
+		(*ar)[i] = i;
+	}
+}
+
+int main()
+{
+	int *ar = NULL;
+	int i;
+	malloc_ar(&ar, 5);
+
+	for (i = 0; i < 5; i++) {
+		printf("%d ", ar[i]);
+	}
+	printf("\n");
+	free(ar);
 	return 0;
 }
 #endif
