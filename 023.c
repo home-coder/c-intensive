@@ -1,8 +1,8 @@
 /***************************************************************************
- > Filename   : 025.c
+ > Filename   : 023.c
  > Author     : oneface - one_face@sina.com
  > Company    : 一尊还酹江月
- > Time       : 2018-05-17 16:44:46
+ > Time       : 2018-05-16 15:42:26
  > Description: 
 
  - This program is free software; you can redistribute it and/or modify it
@@ -13,33 +13,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static void change_func(char **p)
-{
-	*p = "hello world";
+int main(int argc, char **argv)  
+{  
+	char *buf;  
+
+	buf = malloc(1<<31);  
+
+	fgets(buf, 1024, stdin);  
+	printf("%s\n", buf);  
+
+	return 0;  
 }
 
-int main()
-{
-	char *p = NULL;
-
-	change_func(&p);
-
-	printf("p = %s\n", p);
-
-	
-	int i;
-	char *p2 = (char *)malloc(8 * sizeof(char));
-	for (i = 0; i < 8; i++) {
-		p2[i] = '0' + i;
-	}
-	printf("p2= %s\n", p2);
-
-
-	char t = 'a';
-
-	for (i = 0; i < 8; i++) {
-		printf("%c", '0' + ((t & (1 << i)) >> i) );
-	}
-
-	return 0;
-}

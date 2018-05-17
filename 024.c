@@ -22,8 +22,7 @@ static void revert_char_bit(char src, char **dst)
 
 	*dst = (char *)malloc(9 * sizeof(char));
 	for (i = 0; i < 8; i++) {
-		(*dst)[7-i] = '0' + (src & (0x1 << i)) >> i;
-		printf("%c ", (*dst)[7-i]);
+		(*dst)[7-i] = '0' + ((src & (0x1 << i)) >> i); // 移位运算符等 优先级 括号，需要好好掌握
 	}
 	(*dst)[8] = '\0';
 
