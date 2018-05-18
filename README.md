@@ -22,3 +22,10 @@
 020.c	:char ** malloc
 021.c	:size
 022.c	:fuck malloc
+023.c	:gdb 调试段错误，后期可以增加其他功能学习
+024.c	:移位，计算字符对应的位，如'a' = 0110 0001
+025.c	:char * return;
+026.c	:queue 重复 004-queue.c
+027.c	:map 006-hfcompress.c
+028.c	:bits 006-hfcompress.c
+029.c	:file 的操作
