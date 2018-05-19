@@ -39,7 +39,7 @@ static void en_queue(aqueue *aque, int elem)
 
 static int de_queue(aqueue *aque, int *elem)
 {
-	if (aque->front % MAX > aque->rear) {
+	if (aque->front != 0 && aque->front % MAX == aque->rear) {
 		printf("queue is null\n");
 		return -1;
 	}
@@ -69,6 +69,8 @@ int main()
 	printf("da=%d\n", da);
 	de_queue(aque, &da);
 	printf("da=%d\n", da);
+	ret = de_queue(aque, &da);
+	printf("ret=%d  da=%d\n", ret, da);
 	ret = de_queue(aque, &da);
 	printf("ret=%d  da=%d\n", ret, da);
 
