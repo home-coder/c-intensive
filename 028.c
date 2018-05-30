@@ -18,7 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX 16
+#define MAX 32
 static char *hc[] = {
 	"00110",
 	"110001",
@@ -69,7 +69,7 @@ static int de_queue(aqueue *aque, char *elem)
 
 int main(int argc, char **argv)
 {
-	int i, j = 8;
+	int i, j;
 	char bit, bits = 0;
 	int s = sizeof(hc) / sizeof(hc[0]);
 
@@ -91,10 +91,11 @@ int main(int argc, char **argv)
 		}
 		printf("l=%d\n", aque->length);
 		while (aque->length > 8) {
+			j = 8;
 			while (j--) {
 				de_queue(aque, &bit);
 				//如何把字符'0' '1' '0' ...压入字符变量bit (8bit 类型)当中
-				printf("bit = %c\n", bit);
+				//printf("bit = %c\n", bit);
 				bits = bits | ((bit - '0') << j);
 			}
 			printf("bits = %c\n", bits);
